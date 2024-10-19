@@ -34,7 +34,6 @@
         max-width: 800px;
         margin: 20px 10px;
       }
-
       @media (max-width: 768px) {
         .container {
           flex-direction: column;
@@ -55,6 +54,7 @@
         <thead>
           <tr>
             <th>Loại Vàng</th>
+            <th>Chi nhánh</th>
             <th>Mua vào (VNĐ)</th>
             <th>Bán ra (VNĐ)</th>
           </tr>
@@ -86,6 +86,7 @@
           data.data.forEach((item) => {
             const row = `<tr>
                         <td>${item.TypeName}</td>
+                        <td>${item.BranchName}</td> <!-- Thêm BranchName vào bảng -->
                         <td>${item.Buy}</td>
                         <td>${item.Sell}</td>
                     </tr>`;
@@ -128,7 +129,6 @@
         }
       }
 
-      // Gọi hàm khi trang được load
       window.onload = fetchGoldPrices;
     </script>
   </body>
